@@ -23,9 +23,11 @@
   --footH: 76px;
 }
 
-*{ box-sizing:border-box; }
-/* DEFAULT (mobile-first): allow scroll */
-/* desktop-only lock */
+* { box-sizing: border-box; }
+html { scrollbar-gutter: stable; }
+body { overflow-x: hidden; min-height: 100svh; }
+
+
 @media (min-width: 981px) and (min-height: 761px){
   html, body{
     height: 100%;
