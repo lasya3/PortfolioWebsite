@@ -1,0 +1,133 @@
+    
+<!-- lasya.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lasya • Space Portfolio</title>
+
+  <link rel="stylesheet" href="lasya.css" />
+</head>
+<body>
+  <!-- Galactic background (canvas) -->
+  <canvas id="galaxy"></canvas>
+
+  <!-- Soft glow layers -->
+  <div class="nebula-layer nebula-1" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-2" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-3" aria-hidden="true"></div>
+
+  <!-- Floating orbit objects (pure CSS) -->
+  <div class="orbit orbit-a" aria-hidden="true">
+    <span class="planet planet-a"></span>
+    <span class="moon moon-a"></span>
+  </div>
+  <div class="orbit orbit-b" aria-hidden="true">
+    <span class="planet planet-b"></span>
+    <span class="ring ring-b"></span>
+  </div>
+
+  <!-- HUD UI -->
+  <header class="hud">
+    <div class="hud-left">
+      <div class="badge">
+        <span class="dot"></span>
+        <span class="label">A MESSAGE FROM EARTH</span>
+      </div>
+      <div class="title-stack">
+        <div class="kicker">HELLO FELLOW GALAXY MEMBER</div>
+        <div class="subkicker">WELCOME TO MY UNIVERSE</div>
+      </div>
+    </div>
+
+    <nav class="hud-right" aria-label="Primary">
+      <a class="hud-link" href="#about" data-nav>About</a>
+      <a class="hud-link" href="#skills" data-nav>Skills</a>
+      <a class="hud-link" href="#projects" data-nav>Projects</a>
+      <a class="hud-link" href="#experience" data-nav>Experience</a>
+      <a class="hud-link" href="#contact" data-nav>Contact</a>
+    </nav>
+  </header>
+
+  <!-- Side dock -->
+  <aside class="dock" aria-label="Quick actions">
+    <button class="dock-btn" id="toggleSound" title="Toggle ambience" aria-label="Toggle ambience">
+      <span class="ico">◉</span>
+    </button>
+    <button class="dock-btn" id="toggleMotion" title="Reduce motion" aria-label="Reduce motion">
+      <span class="ico">≈</span>
+    </button>
+    <a class="dock-btn" href="#contact" title="Contact" aria-label="Contact">
+      <span class="ico">@</span>
+    </a>
+    <a class="dock-btn" href="#projects" title="Jump to projects" aria-label="Jump to projects">
+      <span class="ico">⌁</span>
+    </a>
+  </aside>
+  
+  <!-- CONTACT -->
+    <section class="scene" id="contact">
+      <div class="panel">
+        <div class="panel-head">
+          <span class="chip">CONTACT</span>
+          <h2>Send a Signal</h2>
+          <p class="muted">This form uses “mailto” by default. You can swap it for a backend later.</p>
+        </div>
+
+        <div class="contact-grid">
+          <form class="glass form" id="contactForm">
+            <label>
+              <span>Email</span>
+              <input type="email" id="email" placeholder="you@example.com" required />
+            </label>
+
+            <label>
+              <span>Subject</span>
+              <input type="text" id="subject" placeholder="Let’s build something cool" required />
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea id="message" rows="6" placeholder="Write your message..." required></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button class="primary" type="submit">
+                <span class="btn-glow" aria-hidden="true"></span>
+                <span>Transmit</span>
+              </button>
+              <button class="ghost" type="button" id="copyEmail">Copy Email</button>
+            </div>
+
+            <div class="muted tiny" id="formNote">
+              Tip: Update your email address inside <code>lasya.js</code>.
+            </div>
+          </form>
+
+          <div class="glass contact-card">
+            <h3>Quick links</h3>
+            <div class="link-row">
+              <a class="link-pill" href="#" onclick="return false;">LinkedIn</a>
+              <a class="link-pill" href="#" onclick="return false;">GitHub</a>
+              <a class="link-pill" href="#" onclick="return false;">Resume</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Status</h3>
+            <div class="status">
+              <span class="status-dot"></span>
+              <span id="statusText">Online • exploring the universe</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Small flex</h3>
+            <p class="muted">
+              This site animates without heavy libraries. It’s built to feel handcrafted, not template-y.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>

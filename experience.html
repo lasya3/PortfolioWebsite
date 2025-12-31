@@ -1,0 +1,104 @@
+    
+<!-- lasya.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lasya • Space Portfolio</title>
+
+  <link rel="stylesheet" href="lasya.css" />
+</head>
+<body>
+  <!-- Galactic background (canvas) -->
+  <canvas id="galaxy"></canvas>
+
+  <!-- Soft glow layers -->
+  <div class="nebula-layer nebula-1" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-2" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-3" aria-hidden="true"></div>
+
+  <!-- Floating orbit objects (pure CSS) -->
+  <div class="orbit orbit-a" aria-hidden="true">
+    <span class="planet planet-a"></span>
+    <span class="moon moon-a"></span>
+  </div>
+  <div class="orbit orbit-b" aria-hidden="true">
+    <span class="planet planet-b"></span>
+    <span class="ring ring-b"></span>
+  </div>
+
+  <!-- HUD UI -->
+  <header class="hud">
+    <div class="hud-left">
+      <div class="badge">
+        <span class="dot"></span>
+        <span class="label">A MESSAGE FROM EARTH</span>
+      </div>
+      <div class="title-stack">
+        <div class="kicker">HELLO FELLOW GALAXY MEMBER</div>
+        <div class="subkicker">WELCOME TO MY UNIVERSE</div>
+      </div>
+    </div>
+
+    <nav class="hud-right" aria-label="Primary">
+      <a class="hud-link" href="#about" data-nav>About</a>
+      <a class="hud-link" href="#skills" data-nav>Skills</a>
+      <a class="hud-link" href="#projects" data-nav>Projects</a>
+      <a class="hud-link" href="#experience" data-nav>Experience</a>
+      <a class="hud-link" href="#contact" data-nav>Contact</a>
+    </nav>
+  </header>
+
+  <!-- Side dock -->
+  <aside class="dock" aria-label="Quick actions">
+    <button class="dock-btn" id="toggleSound" title="Toggle ambience" aria-label="Toggle ambience">
+      <span class="ico">◉</span>
+    </button>
+    <button class="dock-btn" id="toggleMotion" title="Reduce motion" aria-label="Reduce motion">
+      <span class="ico">≈</span>
+    </button>
+    <a class="dock-btn" href="#contact" title="Contact" aria-label="Contact">
+      <span class="ico">@</span>
+    </a>
+    <a class="dock-btn" href="#projects" title="Jump to projects" aria-label="Jump to projects">
+      <span class="ico">⌁</span>
+    </a>
+  </aside>
+  
+  <!-- EXPERIENCE -->
+    <section class="scene" id="experience">
+      <div class="panel">
+        <div class="panel-head">
+          <span class="chip">EXPERIENCE</span>
+          <h2>Logbook</h2>
+          <p class="muted">Replace titles + bullets with your real info.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="t-item glass">
+            <div class="t-top">
+              <h3>Front End Intern • Shubhvite</h3>
+              <span class="pill">Jun 2025 – Sep 2025</span>
+            </div>
+            <ul>
+              <li>Built and maintained responsive UI using HTML, CSS, and JavaScript.</li>
+              <li>Collaborated with design + backend to improve flows and user experience.</li>
+              <li>Supported integration with backend systems to strengthen architecture understanding.</li>
+            </ul>
+          </article>
+
+          <article class="t-item glass">
+            <div class="t-top">
+              <h3>Computer Scientist Intern • SupplyTiger</h3>
+              <span class="pill">Nov 2025 – Present</span>
+            </div>
+            <ul>
+              <li>Developed Python automation scripts to analyze data and update Excel with insights.</li>
+              <li>Monitored logs, checked hardware readiness, and documented issues for review.</li>
+              <li>Extracted analytics using SQL to identify trends and performance patterns.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>

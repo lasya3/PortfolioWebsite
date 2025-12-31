@@ -1,0 +1,127 @@
+    
+<!-- lasya.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lasya • Space Portfolio</title>
+
+  <link rel="stylesheet" href="lasya.css" />
+</head>
+<body>
+  <!-- Galactic background (canvas) -->
+  <canvas id="galaxy"></canvas>
+
+  <!-- Soft glow layers -->
+  <div class="nebula-layer nebula-1" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-2" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-3" aria-hidden="true"></div>
+
+  <!-- Floating orbit objects (pure CSS) -->
+  <div class="orbit orbit-a" aria-hidden="true">
+    <span class="planet planet-a"></span>
+    <span class="moon moon-a"></span>
+  </div>
+  <div class="orbit orbit-b" aria-hidden="true">
+    <span class="planet planet-b"></span>
+    <span class="ring ring-b"></span>
+  </div>
+
+  <!-- HUD UI -->
+  <header class="hud">
+    <div class="hud-left">
+      <div class="badge">
+        <span class="dot"></span>
+        <span class="label">A MESSAGE FROM EARTH</span>
+      </div>
+      <div class="title-stack">
+        <div class="kicker">HELLO FELLOW GALAXY MEMBER</div>
+        <div class="subkicker">WELCOME TO MY UNIVERSE</div>
+      </div>
+    </div>
+
+    <nav class="hud-right" aria-label="Primary">
+      <a class="hud-link" href="#about" data-nav>About</a>
+      <a class="hud-link" href="#skills" data-nav>Skills</a>
+      <a class="hud-link" href="#projects" data-nav>Projects</a>
+      <a class="hud-link" href="#experience" data-nav>Experience</a>
+      <a class="hud-link" href="#contact" data-nav>Contact</a>
+    </nav>
+  </header>
+
+  <!-- Side dock -->
+  <aside class="dock" aria-label="Quick actions">
+    <button class="dock-btn" id="toggleSound" title="Toggle ambience" aria-label="Toggle ambience">
+      <span class="ico">◉</span>
+    </button>
+    <button class="dock-btn" id="toggleMotion" title="Reduce motion" aria-label="Reduce motion">
+      <span class="ico">≈</span>
+    </button>
+    <a class="dock-btn" href="#contact" title="Contact" aria-label="Contact">
+      <span class="ico">@</span>
+    </a>
+    <a class="dock-btn" href="#projects" title="Jump to projects" aria-label="Jump to projects">
+      <span class="ico">⌁</span>
+    </a>
+  </aside>
+  
+  <!-- ABOUT -->
+    <section class="scene" id="about">
+      <div class="panel">
+        <div class="panel-head">
+          <span class="chip">ABOUT</span>
+          <h2>Signal from Lasya</h2>
+          <p class="muted">
+            Replace this with your actual intro. Keep it 4–6 lines. Make it personal + specific.
+          </p>
+        </div>
+
+        <div class="split">
+          <div class="glass card">
+            <h3>What I do</h3>
+            <p>
+              I build interactive, modern web experiences with clean UI, smooth motion, and strong attention to detail.
+              I like projects that feel “alive” when you explore them.
+            </p>
+            <div class="bullets">
+              <div class="bullet">Front-end: HTML, CSS, JavaScript, React</div>
+              <div class="bullet">Back-end helpers: Python, APIs</div>
+              <div class="bullet">Quality mindset: readable, maintainable code</div>
+            </div>
+          </div>
+
+          <div class="glass card">
+            <h3>Current focus</h3>
+            <p>
+              Building portfolio-level UI, improving speed + accessibility, and making designs that feel
+              premium without being heavy.
+            </p>
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-num" data-count="12">0</div>
+                <div class="stat-lbl">UI Experiments</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num" data-count="6">0</div>
+                <div class="stat-lbl">Projects Shipped</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num" data-count="3">0</div>
+                <div class="stat-lbl">Stacks I Love</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="banner">
+          <div class="banner-left">
+            <div class="banner-title">Viewer mode</div>
+            <div class="banner-sub">Everything is visible. Click is optional. Scroll is natural.</div>
+          </div>
+          <div class="banner-right">
+            <a class="ghost" href="#skills" data-nav>Next sector</a>
+          </div>
+        </div>
+      </div>
+    </section>

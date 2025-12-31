@@ -1,0 +1,332 @@
+<!-- lasya.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lasya • Portfolio</title>
+  <link rel="stylesheet" href="lasya.css" />
+</head>
+
+<body>
+  <!-- Galactic background (canvas) -->
+  <canvas id="galaxy"></canvas>
+
+  <!-- Soft glow layers -->
+  <div class="nebula-layer nebula-1" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-2" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-3" aria-hidden="true"></div>
+
+  <!-- Floating orbit objects (pure CSS) -->
+  <div class="orbit orbit-a" aria-hidden="true">
+    <span class="planet planet-a"></span>
+    <span class="moon moon-a"></span>
+  </div>
+  <div class="orbit orbit-b" aria-hidden="true">
+    <span class="planet planet-b"></span>
+    <span class="ring ring-b"></span>
+  </div>
+
+  <!-- Side dock -->
+  <aside class="dock" aria-label="Quick navigation">
+
+    <a class="dock-btn" href="#about" data-nav aria-label="About">
+  <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+    <!-- cute “person” icon -->
+    <path d="M12 12.2c2 0 3.6-1.6 3.6-3.6S14 5 12 5 8.4 6.6 8.4 8.6s1.6 3.6 3.6 3.6Z"/>
+    <path d="M5.6 20c.7-3.1 3.3-5 6.4-5s5.7 1.9 6.4 5H5.6Z" opacity=".9"/>
+    <path d="M17.9 4.9l.4.9 1 .4-1 .4-.4.9-.4-.9-1-.4 1-.4.4-.9Z" opacity=".95"/>
+  </svg>
+  <span class="dock-label">About</span>
+</a>
+
+
+    <!-- Education -->
+    <a class="dock-btn" href="#education" data-nav aria-label="Education">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 4 3 8.6 12 13.2 21 8.6 12 4Z"/>
+        <path d="M6.2 11.6v3.2c0 1.6 2.9 3 5.8 3s5.8-1.4 5.8-3v-3.2l-5.8 3-5.8-3Z" opacity=".9"/>
+        <path d="M18.6 5.2l.5 1.1 1.2.5-1.2.5-.5 1.1-.5-1.1-1.2-.5 1.2-.5.5-1.1Z" opacity=".95"/>
+      </svg>
+      <span class="dock-label">Education</span>
+    </a>
+
+
+    <!-- Experience -->
+    <a class="dock-btn" href="#experience" data-nav aria-label="Experience">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 6.5V5.2C8 4 9 3 10.2 3h3.6C15 3 16 4 16 5.2v1.3h3.1c.9 0 1.7.8 1.7 1.7v9.6c0 .9-.8 1.7-1.7 1.7H4.9c-.9 0-1.7-.8-1.7-1.7V8.2c0-.9.8-1.7 1.7-1.7H8Zm2-.1h4V5.3c0-.2-.2-.4-.4-.4h-3.2c-.2 0-.4.2-.4.4v1.1Z"/>
+        <path d="M18.7 5.4l.4.9 1 .4-1 .4-.4.9-.4-.9-1-.4 1-.4.4-.9Z" opacity=".95"/>
+      </svg>
+      <span class="dock-label">Experience</span>
+    </a>
+
+    <!-- Skills -->
+    <a class="dock-btn" href="#skills" data-nav aria-label="Skills">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M9 6.5c0-1.4 1.2-2.5 2.6-2.5 1 0 1.9.5 2.3 1.3.2-.1.5-.1.8-.1 1.2 0 2.1.9 2.1 2 0 .7-.3 1.3-.9 1.6.2.3.3.7.3 1.1 0 1-.7 1.9-1.7 2.1-.2 1.3-1.4 2.3-2.9 2.3H11c-1.5 0-2.7-1-2.9-2.3-1-.2-1.7-1.1-1.7-2.1 0-.4.1-.8.3-1.1-.6-.3-.9-.9-.9-1.6 0-1.1.9-2 2.1-2 .3 0 .6 0 .8.1.4-.8 1.3-1.3 2.3-1.3Z"/>
+        <path d="M7.6 5.1l.4.9 1 .4-1 .4-.4.9-.4-.9-1-.4 1-.4.4-.9ZM17.8 14.6l.4.9 1 .4-1 .4-.4.9-.4-.9-1-.4 1-.4.4-.9Z" opacity=".95"/>
+      </svg>
+      <span class="dock-label">Skills</span>
+    </a>
+
+    <!-- Projects -->
+    <a class="dock-btn" href="#projects" data-nav aria-label="Projects">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M14.8 3.8c-3.1.7-5.8 3.4-6.6 6.5l-.3 1.2 4.6 4.6 1.2-.3c3.1-.8 5.8-3.5 6.5-6.6.3-1.4.3-3-.1-5.4-2.4-.4-4-.4-5.3 0Z"/>
+        <path d="M7.2 12.2 5 13l1.8 1.8-.7 2.2 2.3-.7 1.7 1.7.6-2.4-3-3.4Z" opacity=".9"/>
+        <path d="M15.9 8.3a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Z" opacity=".95"/>
+        <path d="M4.3 18.8c.9.3 2.2.2 3.4-.3-.5 1.2-1.7 2.5-3.4 3.2-.7-1.1-.7-2.2 0-2.9Z" opacity=".85"/>
+      </svg>
+      <span class="dock-label">Projects</span>
+    </a>
+
+    <!-- Publications -->
+    <a class="dock-btn" href="#publications" data-nav aria-label="Publications">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 6.2c-1.6-1.4-3.6-2-6-2v12.9c2.4 0 4.4.6 6 2 1.6-1.4 3.6-2 6-2V4.2c-2.4 0-4.4.6-6 2Z"/>
+        <path d="M16.9 9.4c-.5-.5-1.2-.5-1.7 0l-.2.2-.2-.2c-.5-.5-1.2-.5-1.7 0-.5.5-.5 1.3 0 1.8l1.9 1.9 1.9-1.9c.5-.5.5-1.3 0-1.8Z" opacity=".95"/>
+      </svg>
+      <span class="dock-label">Publications</span>
+    </a>
+
+  </aside>
+
+  <!-- Main -->
+  <main class="world">
+
+    <!-- IMPORTANT: keep these real sections so nav works -->
+    <section id="education"></section>
+    <section id="skills"></section>
+    <section id="projects"></section>
+    <section id="publications"></section>
+    <section id="experience"></section>
+    <section id="contact"></section>
+    <section id="resume"></section>
+
+<!-- HERO -->
+<section class="scene hero" id="home">
+  <div class="hero-grid">
+
+    <!-- LEFT CARD -->
+    <div class="hero-left">
+      <div class="hero-holo hero-holo--flip" id="heroCard">
+        <div class="holo-scan" aria-hidden="true"></div>
+
+        <div class="heroFlip">
+          <div class="heroFlipInner" id="heroFlipInner">
+
+            <!-- FRONT -->
+            <div class="heroFace heroFront">
+              <div class="hero-name">
+                <h1 class="big">Lasya Madhuri Gundapaneni</h1>
+                <p class="tag">
+                  <span class="type" id="typeLine"></span>
+                  <span class="cursor" aria-hidden="true"></span>
+                </p>
+              </div>
+
+              <div class="hero-actions">
+                <a class="primary" href="#" id="contactBtn">
+                  <span class="btn-glow" aria-hidden="true"></span>
+                  <span>CONTACT ME</span>
+                </a>
+
+                <a class="ghost" href="#resume" data-nav>View Resume</a>
+              </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="heroFace heroBack" aria-label="Contact form">
+              <div class="flipBackTop">
+                <span class="flipTitle">Send a message</span>
+              </div>
+
+              <form class="flipForm" id="flipForm">
+                <div class="flipRow">
+                  <label class="flipLabel">
+                    Email
+                    <input class="flipInput" type="email" id="fromEmail" placeholder="you@email.com" required>
+                  </label>
+
+                  <label class="flipLabel">
+                    Subject
+                    <input class="flipInput" type="text" id="subject" placeholder="Quick question..." required>
+                  </label>
+                </div>
+
+                <label class="flipLabel">
+                  Message
+                  <textarea class="flipTextarea" id="message" rows="4" placeholder="Write your message..." required></textarea>
+                </label>
+
+                <!-- ACTION BUTTONS -->
+                <div class="flipActions">
+                  <button class="flipSend" type="submit">Send</button>
+                  <button class="ghost" type="button" id="toFrontInline">Back</button>
+                </div>
+              </form>
+            </div>
+
+          </div> <!-- /.heroFlipInner -->
+        </div>   <!-- /.heroFlip -->
+      </div>     <!-- /.hero-holo -->
+    </div>       <!-- /.hero-left -->
+
+    <!-- RIGHT CARD (EARTH) -->
+    <div class="hero-right">
+      <div class="planet-wrap" aria-hidden="true">
+        <div class="earth">
+          <div class="earth-glow"></div>
+          <div class="earth-atmo"></div>
+          <div class="earth-shine"></div>
+          <div class="earth-stars"></div>
+          <div class="earth-grid"></div>
+        </div>
+
+        <div class="astronaut" aria-hidden="true">
+          <div class="astro-body"></div>
+          <div class="astro-visor"></div>
+          <div class="astro-pack"></div>
+          <div class="astro-tether"></div>
+        </div>
+
+        <button class="click-open" id="clickToOpen" aria-label="Explore the galaxy">
+          <span class="brkt tl"></span><span class="brkt tr"></span>
+          <span class="brkt bl"></span><span class="brkt br"></span>
+          <span class="txt">Click here to explore the galaxy</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ✅ SOCIAL BUTTONS UNDER BOTH BOXES (MUST BE INSIDE .hero-grid) -->
+    <div class="hero-social-stack">
+      <a class="hero-social-btn linkedin" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="hero-social-btn github" href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="hero-social-btn instagram" href="https://instagram.com/yourusername" target="_blank" rel="noreferrer">Instagram</a>
+    </div>
+
+  </div> <!-- /.hero-grid -->
+</section>
+
+
+
+      <!-- Mission drawer -->
+      <div class="mission" id="mission">
+        <div class="mission-top">
+          <div class="mission-title">
+            <h2>Missions Accomplished</h2>
+          </div>
+          <button class="x" id="closeMission" aria-label="Close mission log">✕</button>
+        </div>
+
+        <!-- UPDATED: mission cards now use the SAME “icon + label” style as your side dock -->
+        <div class="mission-grid">
+
+          <a class="mission-card" href="#about" data-nav>
+          <div class="mc-head">
+            <span class="mc-icon" aria-hidden="true">
+              <svg class="mc-ico" viewBox="0 0 24 24">
+                <path d="M12 12.2c2 0 3.6-1.6 3.6-3.6S14 5 12 5 8.4 6.6 8.4 8.6s1.6 3.6 3.6 3.6Z"/>
+                <path d="M5.6 20c.7-3.1 3.3-5 6.4-5s5.7 1.9 6.4 5H5.6Z" opacity=".9"/>
+                <path d="M17.9 4.9l.4.9 1 .4-1 .4-.4.9-.4-.9-1-.4 1-.4.4-.9Z" opacity=".95"/>
+              </svg>
+            </span>
+            <span class="mc-title">About</span>
+          </div>
+          <p>A quick intro about me and what I’m building.</p>
+          <span class="mc-foot">Open sector →</span>
+        </a>
+
+
+          <a class="mission-card" href="#education" data-nav>
+            <div class="mc-head">
+              <span class="mc-icon" aria-hidden="true">
+                <svg class="mc-ico" viewBox="0 0 24 24">
+                  <path d="M12 4 3 8.6 12 13.2 21 8.6 12 4Z"/>
+                  <path d="M6.2 11.6v3.2c0 1.6 2.9 3 5.8 3s5.8-1.4 5.8-3v-3.2l-5.8 3-5.8-3Z" opacity=".9"/>
+                  <path d="M18.6 5.2l.5 1.1 1.2.5-1.2.5-.5 1.1-.5-1.1-1.2-.5 1.2-.5.5-1.1Z" opacity=".95"/>
+                </svg>
+              </span>
+              <span class="mc-title">Education</span>
+            </div>
+            <p>Where I studied and what I focused on.</p>
+            <span class="mc-foot">Open sector →</span>
+          </a>
+
+
+          <a class="mission-card" href="#experience" data-nav>
+            <div class="mc-head">
+              <span class="mc-icon" aria-hidden="true">
+                <svg class="mc-ico" viewBox="0 0 24 24">
+                  <path d="M8 6.5V5.2C8 4 9 3 10.2 3h3.6C15 3 16 4 16 5.2v1.3h3.1c.9 0 1.7.8 1.7 1.7v9.6c0 .9-.8 1.7-1.7 1.7H4.9c-.9 0-1.7-.8-1.7-1.7V8.2c0-.9.8-1.7 1.7-1.7H8Zm2-.1h4V5.3c0-.2-.2-.4-.4-.4h-3.2c-.2 0-.4.2-.4.4v1.1Z"/>
+                </svg>
+              </span>
+              <span class="mc-title">Experience</span>
+            </div>
+            <p>Internships, roles, responsibilities, and impact.</p>
+            <span class="mc-foot">Open sector →</span>
+          </a>
+
+
+
+          <a class="mission-card" href="#skills" data-nav>
+            <div class="mc-head">
+              <span class="mc-icon" aria-hidden="true">
+                <svg class="mc-ico" viewBox="0 0 24 24">
+                  <path d="M9 6.5c0-1.4 1.2-2.5 2.6-2.5 1 0 1.9.5 2.3 1.3.2-.1.5-.1.8-.1 1.2 0 2.1.9 2.1 2 0 .7-.3 1.3-.9 1.6.2.3.3.7.3 1.1 0 1-.7 1.9-1.7 2.1-.2 1.3-1.4 2.3-2.9 2.3H11c-1.5 0-2.7-1-2.9-2.3-1-.2-1.7-1.1-1.7-2.1 0-.4.1-.8.3-1.1-.6-.3-.9-.9-.9-1.6 0-1.1.9-2 2.1-2 .3 0 .6 0 .8.1.4-.8 1.3-1.3 2.3-1.3Z"/>
+                  <path d="M7.6 5.1l.4.9 1 .4-1 .4-.4.9-.4-.9-1-.4 1-.4.4-.9ZM17.8 14.6l.4.9 1 .4-1 .4-.4.9-.4-.9-1-.4 1-.4.4-.9Z" opacity=".95"/>
+                </svg>
+              </span>
+              <span class="mc-title">Skills</span>
+            </div>
+            <p>My tech stack, tools, and what I’m strongest at.</p>
+            <span class="mc-foot">Open sector →</span>
+          </a>
+
+          <a class="mission-card" href="#projects" data-nav>
+            <div class="mc-head">
+              <span class="mc-icon" aria-hidden="true">
+                <svg class="mc-ico" viewBox="0 0 24 24">
+                  <path d="M14.8 3.8c-3.1.7-5.8 3.4-6.6 6.5l-.3 1.2 4.6 4.6 1.2-.3c3.1-.8 5.8-3.5 6.5-6.6.3-1.4.3-3-.1-5.4-2.4-.4-4-.4-5.3 0Z"/>
+                  <path d="M7.2 12.2 5 13l1.8 1.8-.7 2.2 2.3-.7 1.7 1.7.6-2.4-3-3.4Z" opacity=".9"/>
+                  <path d="M15.9 8.3a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Z" opacity=".95"/>
+                </svg>
+              </span>
+              <span class="mc-title">Projects</span>
+            </div>
+            <p>Featured builds with highlights and outcomes.</p>
+            <span class="mc-foot">Open sector →</span>
+          </a>
+
+          <a class="mission-card" href="#publications" data-nav>
+            <div class="mc-head">
+              <span class="mc-icon" aria-hidden="true">
+                <svg class="mc-ico" viewBox="0 0 24 24">
+                  <path d="M12 6.2c-1.6-1.4-3.6-2-6-2v12.9c2.4 0 4.4.6 6 2 1.6-1.4 3.6-2 6-2V4.2c-2.4 0-4.4.6-6 2Z"/>
+                  <path d="M16.9 9.4c-.5-.5-1.2-.5-1.7 0l-.2.2-.2-.2c-.5-.5-1.2-.5-1.7 0-.5.5-.5 1.3 0 1.8l1.9 1.9 1.9-1.9c.5-.5.5-1.3 0-1.8Z" opacity=".95"/>
+                </svg>
+              </span>
+              <span class="mc-title">Publications</span>
+            </div>
+            <p>Research, writing, and published work.</p>
+            <span class="mc-foot">Open sector →</span>
+          </a>
+
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-middle">© <span id="year"></span> Lasya</div>
+      <a class="footer-right" href="#home" data-nav>Back to orbit ↑</a>
+    </footer>
+  </main>
+
+  <!-- Click particles -->
+  <div id="particles" aria-hidden="true"></div>
+
+  <script src="lasya.js" defer></script>
+</body>
+</html>

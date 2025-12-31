@@ -1,0 +1,98 @@
+    
+<!-- lasya.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lasya • Space Portfolio</title>
+
+  <link rel="stylesheet" href="lasya.css" />
+</head>
+<body>
+  <!-- Galactic background (canvas) -->
+  <canvas id="galaxy"></canvas>
+
+  <!-- Soft glow layers -->
+  <div class="nebula-layer nebula-1" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-2" aria-hidden="true"></div>
+  <div class="nebula-layer nebula-3" aria-hidden="true"></div>
+
+  <!-- Floating orbit objects (pure CSS) -->
+  <div class="orbit orbit-a" aria-hidden="true">
+    <span class="planet planet-a"></span>
+    <span class="moon moon-a"></span>
+  </div>
+  <div class="orbit orbit-b" aria-hidden="true">
+    <span class="planet planet-b"></span>
+    <span class="ring ring-b"></span>
+  </div>
+
+  <!-- HUD UI -->
+  <header class="hud">
+    <div class="hud-left">
+      <div class="badge">
+        <span class="dot"></span>
+        <span class="label">A MESSAGE FROM EARTH</span>
+      </div>
+      <div class="title-stack">
+        <div class="kicker">HELLO FELLOW GALAXY MEMBER</div>
+        <div class="subkicker">WELCOME TO MY UNIVERSE</div>
+      </div>
+    </div>
+
+    <nav class="hud-right" aria-label="Primary">
+      <a class="hud-link" href="#about" data-nav>About</a>
+      <a class="hud-link" href="#skills" data-nav>Skills</a>
+      <a class="hud-link" href="#projects" data-nav>Projects</a>
+      <a class="hud-link" href="#experience" data-nav>Experience</a>
+      <a class="hud-link" href="#contact" data-nav>Contact</a>
+    </nav>
+  </header>
+
+  <!-- Side dock -->
+  <aside class="dock" aria-label="Quick actions">
+    <button class="dock-btn" id="toggleSound" title="Toggle ambience" aria-label="Toggle ambience">
+      <span class="ico">◉</span>
+    </button>
+    <button class="dock-btn" id="toggleMotion" title="Reduce motion" aria-label="Reduce motion">
+      <span class="ico">≈</span>
+    </button>
+    <a class="dock-btn" href="#contact" title="Contact" aria-label="Contact">
+      <span class="ico">@</span>
+    </a>
+    <a class="dock-btn" href="#projects" title="Jump to projects" aria-label="Jump to projects">
+      <span class="ico">⌁</span>
+    </a>
+  </aside>
+  
+  <!-- SKILLS -->
+    <section class="scene" id="skills">
+      <div class="panel">
+        <div class="panel-head">
+          <span class="chip">SKILLS</span>
+          <h2>Tech Constellation</h2>
+          <p class="muted">Hover cards for a “cosmic pulse”. Click pins to lock them.</p>
+        </div>
+
+        <div class="skill-grid" id="skillGrid">
+          <button class="skill" data-skill="React" type="button"><span>React</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="JavaScript" type="button"><span>JavaScript</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="TypeScript" type="button"><span>TypeScript</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="HTML/CSS" type="button"><span>HTML/CSS</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="UI/UX" type="button"><span>UI/UX</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="APIs" type="button"><span>APIs</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="Python" type="button"><span>Python</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="SQL" type="button"><span>SQL</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="Git/GitHub" type="button"><span>Git/GitHub</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="Testing" type="button"><span>Testing</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="Performance" type="button"><span>Performance</span><i class="pulse"></i></button>
+          <button class="skill" data-skill="Accessibility" type="button"><span>Accessibility</span><i class="pulse"></i></button>
+        </div>
+
+        <div class="skill-readout glass" id="skillReadout" aria-live="polite">
+          <div class="readout-title">Select a skill</div>
+          <div class="readout-text muted">Click any skill chip to pin it here.</div>
+        </div>
+      </div>
+    </section>
