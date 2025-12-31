@@ -24,19 +24,22 @@
 }
 
 * { box-sizing: border-box; }
-html { scrollbar-gutter: stable; }
-body { overflow-x: hidden; min-height: 100svh; }
 
+/* ✅ Windows/mac scrollbar difference fix */
+html{
+  scroll-behavior:smooth;
+  scrollbar-gutter: stable;
+}
 
-@media (min-width: 981px) and (min-height: 761px){
+/* ✅ Do NOT hard-lock scrolling on desktop (Windows scaling makes height “short”) */
+@media (min-width: 981px){
   html, body{
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
 
-
-html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, 'Times New Roman', Times, serif;
@@ -248,13 +251,12 @@ code{
   margin: 0 auto;
 }
 .hero{
-  padding-top: -18px;
   padding-bottom: 18px;
 }
 
-/* HERO fill viewport between header + footer */
+/* ✅ HERO fill viewport (use svh for consistency) */
 .scene.hero{
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -270,8 +272,11 @@ code{
   width: 100%;
   max-width: 1400px;
   align-items: stretch;
-  margin-top: 80px; /* increase/decrease this */
-  position: relative; /* for mission overlay */
+
+  /* ✅ adapts better on Windows scaling / shorter height */
+  margin-top: clamp(24px, 6vh, 80px);
+
+  position: relative;
 }
 
 .hero-holo{
@@ -311,11 +316,12 @@ code{
   text-transform: uppercase;
   text-shadow: 0 0 34px rgba(168,139,255,.22);
 }
+
+/* ✅ fixed invalid margin */
 .tag{
-  margin:15;
+  margin: 15px 0 8px;
   font-size: 1.25rem;
   letter-spacing:.02em;
-  margin-bottom: 8px;
 }
 .cursor{
   display:inline-block;
